@@ -2,7 +2,7 @@
 import scipy.misc
 import numpy as np 
 from sklearn.model_selection import StratifiedKFold
-import cPickle
+import pickle as Pickle
 #import matplotlib
 #import matplotlib.pyplot as plt 
 from skimage.filters import threshold_otsu
@@ -26,6 +26,7 @@ def readlabel():
       if int(data[1]) == 0:
         mydict[data[0]] = int(data[1])
       else:
+        ''' only looking for malign (2) this becomes (1) '''
         assert(int(data[1])==2 or int(data[1])==1)
         mydict[data[0]] = int(data[1])-1
   return mydict
@@ -154,7 +155,7 @@ def cvsplitenhance(fold, totalfold, mydict, valfold=-1):
     valfold = (fold+1) % totalfold
   print('valfold'+str(valfold))
   trainls, valls, testls = [], [], []
-  for train, test in skf.split(x,y):
+  for train, test in skf.split(list(x),list(y)):
     print(len(train), len(test))
     if count == fold:
       #print test[:]

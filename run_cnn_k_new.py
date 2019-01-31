@@ -13,7 +13,7 @@ from keras.optimizers import SGD, Adam, RMSprop
 from keras.utils import np_utils
 import numpy as np
 from keras.callbacks import ModelCheckpoint
-from keras.regularizers import l1l2
+from keras.regularizers import l1_l2
 import inbreast
 #import googlenet
 from convnetskeras.convnets import preprocess_image_batch, convnet

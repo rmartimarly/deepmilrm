@@ -22,3 +22,8 @@ _test is used for test.
 Our code is based on conv-keras and keras. If you use current version of keras, you need to revised the code a little bit for adaption. I will update a repo. for current keras.
 
 If you have any questions, please contact with me wentaozhu1991@gmail.com.
+
+
+# Comments Robertm (31/1/2019)
+- labels.txt is the INBREAST database where 0 is no lesion, 1 bening and 2 malign. 
+
